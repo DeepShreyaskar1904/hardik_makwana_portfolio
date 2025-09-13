@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardik Makwana</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .responsive-name {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-gray-900 text-white p-4 sticky top-0 z-50 flex justify-between items-center">
+        <div class="responsive-name font-bold text-center md:text-left overflow-hidden truncate">
+            Hardik Makwana
+        </div>
+
+        <!-- Hamburger Icon on the right -->
+        <div class="fixed top-4 right-4 z-50 md:hidden">
+            <div id="hamburger" class="flex flex-col space-y-1 cursor-pointer" onclick="toggleMenu()">
+                <span class="bg-white h-1 w-8"></span>
+                <span class="bg-white h-1 w-8"></span>
+                <span class="bg-white h-1 w-8"></span>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu expanding from the right -->
+        <div id="sidebar"
+            class="fixed top-0 right-0 h-full w-64 bg-gray-900 text-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <ul class="flex flex-col space-y-6 mt-20 text-center">
+                <li><a href="#home" class="block py-2 hover:text-yellow-500" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" class="block py-2 hover:text-yellow-500" onclick="toggleMenu()">About</a></li>
+                <li><a href="#skills" class="block py-2 hover:text-yellow-500" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#experience" class="block py-2 hover:text-yellow-500" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" class="block py-2 hover:text-yellow-500" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" class="block py-2 hover:text-yellow-500" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 justify-end">
+            <li><a href="#home" class="hover:text-yellow-500 font-semibold">Home</a></li>
+            <li><a href="#about" class="hover:text-yellow-500 font-semibold">About</a></li>
+            <li><a href="#skills" class="hover:text-yellow-500 font-semibold">Skills</a></li>
+            <li><a href="#experience" class="hover:text-yellow-500 font-semibold">Experience</a></li>
+            <li><a href="#projects" class="hover:text-yellow-500 font-semibold">Projects</a></li>
+            <li><a href="#contact" class="hover:text-yellow-500 font-semibold">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="bg-gray-900 text-white text-center py-20 px-4 sm:px-6 md:px-8">
+        <img src="my1.jpg" alt="Hardik Makwana"
+            class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto rounded-full border-4 border-yellow-500 mb-6">
+        <div id="nameTyping" class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 break-words max-w-full mx-auto"></div>
+        <p class="text-sm sm:text-base md:text-lg mb-2 break-words max-w-full mx-auto px-4">
+            Data Analyst • IT Faculty • Corporate Trainer • Office Automation Specialist
+        </p>
+        <p class="text-sm sm:text-base md:text-lg break-words max-w-full mx-auto px-4">
+            Blending the power of data with technology-driven solutions. Explore my journey through analytics, training, and digital transformation.
+        </p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-10 mt-12">
+        <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
+        <p class="text-gray-700 mb-6 text-base sm:text-lg leading-relaxed text-center">
+            I am Hardik Makwana, a passionate <strong>Data Analyst</strong> and <strong>IT Trainer</strong> with extensive experience in Accounting, Office Automation, and Microsoft 365 solutions. I specialize in turning complex data into actionable insights and empowering professionals through technology-driven training programs.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <h3 class="text-xl font-semibold mb-2">Core Expertise</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><i class="fas fa-chart-line text-black mr-2"></i>Data Analysis & Reporting</li>
+                    <li><i class="fas fa-cogs text-black mr-2"></i>Microsoft 365 Administration</li>
+                    <li><i class="fas fa-cogs text-black mr-2"></i>Office Automation Tools</li>
+                    <li><i class="fas fa-users text-black mr-2"></i>Employee & Educator Training Programs</li>
+                    <li><i class="fas fa-chart-pie text-black mr-2"></i>Dashboard & Data Visualization</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-2">Key Achievements</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><i class="fas fa-user-graduate text-black mr-2"></i>Trained over <strong>750 employees</strong> and <strong>250 educators</strong> across Gujarat</li>
+                    <li><i class="fas fa-database text-black mr-2"></i>Implemented automated reporting systems for multiple organizations</li>
+                    <li><i class="fas fa-cogs text-black mr-2"></i>Optimized Office 365 and IT workflows to improve productivity</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
+            I believe in leveraging data and technology to create solutions that simplify work, improve efficiency, and enable informed decision-making. My goal is to empower professionals and organizations to achieve more through the smart use of data and digital tools.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-5xl mx-auto mt-12 px-4 sm:px-6 md:px-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">Skills</h2>
+        <div id="skillsCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="max-w-5xl mx-auto mt-12 px-4 sm:px-6 md:px-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">Experience</h2>
+        <div id="experienceCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-5xl mx-auto mt-12 px-4 sm:px-6 md:px-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">Projects</h2>
+        <div id="projectsCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-3xl mx-auto py-12 px-4 sm:px-6 md:px-8 bg-gray-100 text-center rounded-xl shadow-md">
+        <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+        <p class="text-gray-600 mb-6">Feel free to send me an email for collaborations or training inquiries.</p>
+        <a href="mailto:makwanahardik2411@gmail.com"
+            class="inline-flex items-center bg-white border border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-200">
+            <i class="fas fa-envelope mr-3 text-dark-blue-500"></i>makwanahardik2411@gmail.com
+        </a>
+        <div id="socialLinks" class="flex justify-center space-x-6 mt-8 text-3xl"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-6 mt-12">
+        <p>&copy; 2025 Hardik Makwana. All rights reserved.</p>
+        <p>Developed by Deep Shreyaskar.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('translate-x-full');
+        }
+
+        // Typing effect
+        const nameEl = document.getElementById('nameTyping');
+        const nameText = "Hardik Makwana";
+        const colors = ["#f0a500"];
+        let index = 0, charIndex = 0;
+
+        function type() {
+            if (charIndex <= nameText.length) {
+                nameEl.innerHTML = `<span style="color:${colors[index % colors.length]}">${nameText.substring(0, charIndex)}</span>`;
+                charIndex++;
+                setTimeout(type, 150);
+            } else {
+                setTimeout(erase, 1000);
+            }
+        }
+
+        function erase() {
+            if (charIndex >= 0) {
+                nameEl.innerHTML = `<span style="color:${colors[index % colors.length]}">${nameText.substring(0, charIndex)}</span>`;
+                charIndex--;
+                setTimeout(erase, 100);
+            } else {
+                index++;
+                setTimeout(type, 500);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            type();
+        });
+
+        // Cards data
+        const skills = [
+            { title: "Data Visualization", description: "Creating charts, dashboards and visual insights from data.", icon: "fas fa-chart-line text-black" },
+            { title: "Office Automation", description: "Automating workflows using Microsoft 365 tools.", icon: "fas fa-cogs text-black" },
+            { title: "Training & Mentorship", description: "Guiding teams and educators for digital proficiency.", icon: "fas fa-users text-black" },
+            { title: "Problem Solving", description: "Identifying and resolving IT and data challenges.", icon: "fas fa-lightbulb text-black" },
+            { title: "Data Cleaning", description: "Preparing and cleaning datasets for analysis.", icon: "fas fa-database text-black" },
+            { title: "Microsoft 365 Admin", description: "Managing Microsoft 365 environment efficiently.", icon: "fas fa-user-shield text-black" }
+        ];
+
+        const experiences = [
+            { title: "Corporate Lecturer & Coordinator", company: "ITC Mogri", period: "2021–Present", description: "Delivered IT training to employees and educators.", icon: "fas fa-chalkboard-teacher text-black" },
+            { title: "Office 365 Administrator", company: "ITC Mogri", period: "2021–Present", description: "Managed Office 365 environment.", icon: "fas fa-user-shield text-black" },
+            { title: "Data Analyst", company: "ITC Mogri", period: "2020–2021", description: "Created dashboards and reports.", icon: "fas fa-chart-line text-black" },
+            { title: "Accountant", company: "Mohit Garment", period: "2020–2021", description: "Handled financial accounts and reporting.", icon: "fas fa-file-invoice-dollar text-black" }
+        ];
+
+        const projects = [
+            { title: "Data Reporting", description: "Developed automated reporting tools for data insights.", icon: "fas fa-database text-black" },
+            { title: "System Integration", description: "Integrated multiple IT systems for seamless workflow.", icon: "fas fa-network-wired text-black" },
+            { title: "Analytics Dashboard", description: "Built dashboards for performance monitoring.", icon: "fas fa-chart-pie text-black" },
+            { title: "Automation Tools", description: "Created tools to automate repetitive office tasks.", icon: "fas fa-cogs text-black" }
+        ];
+
+        function renderCards(data, containerId) {
+            const container = d3.select(containerId);
+            container.selectAll("div.card")
+                .data(data)
+                .enter()
+                .append("div")
+                .attr("class", "bg-white rounded-xl shadow-lg p-6 flex flex-col items-start opacity-0 translate-y-10 transition-all duration-700 ease-out card")
+                .html(d => `
+                    <div class="flex items-center mb-2">
+                        <i class="${d.icon} text-2xl mr-3 transition-transform duration-300 hover:scale-110"></i>
+                        <h3 class="text-xl font-bold">${d.title}</h3>
+                    </div>
+                    ${d.company ? `<p class="text-gray-500 font-semibold">${d.company} | ${d.period}</p>` : ""}
+                    <p class="text-gray-600 mt-2">${d.description}</p>
+                `);
+        }
+
+        renderCards(skills, "#skillsCards");
+        renderCards(experiences, "#experienceCards");
+        renderCards(projects, "#projectsCards");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove("opacity-0", "translate-y-10");
+                    entry.target.classList.add("opacity-100", "translate-y-0");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.card').forEach(card => observer.observe(card));
+
+        // Social Links
+        const socialLinksData = [
+            { url: "https://www.instagram.com/makwana_hardik_lalji/", icon: "fab fa-instagram" },
+            { url: "https://www.facebook.com/share/1BLuWBaU6v/", icon: "fab fa-facebook" },
+            { url: "https://www.linkedin.com/in/makwana-hardik-582a562a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app", icon: "fab fa-linkedin" },
+            { url: "https://snapchat.com/t/VPVbYr2L", icon: "fab fa-snapchat" }
+        ];
+
+        const socialContainer = document.getElementById("socialLinks");
+        socialLinksData.forEach(link => {
+            const a = document.createElement("a");
+            a.href = link.url;
+            a.target = "_blank";
+            a.className = "text-gray-800 hover:text-yellow-500";
+            a.innerHTML = `<i class="${link.icon}"></i>`;
+            socialContainer.appendChild(a);
+        });
+    </script>
+
+</body>
+
+</html>
